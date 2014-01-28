@@ -42,9 +42,9 @@ $curl="curl";
 # grib2 files from operational nomads server
 #
 # 1x1 degree GFS
-$URL='http://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gfs.$YYYY$MM$DD$HH/gfs.t${HH}z.pgrb2f${FHR}';
+# $URL='http://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gfs.$YYYY$MM$DD$HH/gfs.t${HH}z.pgrb2f${FHR}';
 # 0.5x0.5 degree GFS
-# $URL='http://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gfs.$YYYY$MM$DD$HH/master/gfs.t${HH}z.mastergrb2f${FHR}';
+$URL='http://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gfs.$YYYY$MM$DD$HH/master/gfs.t${HH}z.mastergrb2f${FHR}';
 #
 # grib2 files from www.ftp.ncep.noaa.gov (not operational)
 # $URL='http://www.ftp.ncep.noaa.gov/data/nccf/com/gfs/prod/gfs.$YYYY$MM$DD$HH/gfs.t${HH}z.pgrb2f${FHR}';
@@ -54,7 +54,7 @@ $inv='.idx';
 $grb='';
 
 # $windows='no';
-$windows='yes';
+$windows='no';
 #------------- guts of script ---------------------------------------------------
 $version="2.0";
 if ($#ARGV != 7) {

@@ -23,7 +23,7 @@ convert_mb_to_ft["250 mb"]="33999"
 convert_mb_to_ft["200 mb"]="38662"
 
 
-date_auto=`date -u +%Y%m%d`
+date_auto=`date -u +%Y%m%d -d "yesterday"`
 time_auto=`date -u +%H`
 
 levels="200_mb:400_mb:500_mb"
@@ -50,6 +50,9 @@ do
     
     #сформировать имя выходного файла == дате, на которую делается данный прогноз
     data_filename=`head -1 out.csv | awk -F "," '{ print $2 }' | sed 's/"//g'` 
+
+    #удалить файл со старым прогоном данного прогноза 
+    rm -f "$data_filename".csv
 
     # далее группировка строк с различными параметрами но одной координатной ячейкой
     cat out.csv | awk -F "," '{ print $4 "," $5 "," $6}' | sort | uniq > coords.txt #получаем список координатных ячеек (широта, долгота, высота)

@@ -12,4 +12,3 @@ for f in *.csv; do
    	sudo -u postgres psql -U postgres -c "$query"
 done
 
-clean_query='DELETE FROM meteo."grib-forecast" WHERE fdate IN (SELECT fdate FROM meteo."grib-forecast" GROUP BY fdate ORDER BY fdate LIMIT 4);'

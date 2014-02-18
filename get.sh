@@ -6,10 +6,8 @@ UP_LAN=56.5
 DOWN_LAN=54
 
 #TODO: чтение параметров из файла
-#TODO: пересчёт mib в футы (метры)
 #TODO: запись в postgres
 #TODO: кольцевой буфер заданной длины
-#TODO: документация
 
 declare -A convert_mb_to_ft
 convert_mb_to_ft["1000 mb"]="364"

@@ -23,7 +23,7 @@ convert_mb_to_ft["250 mb"]="33999"
 convert_mb_to_ft["200 mb"]="38662"
 
 
-date_auto=`date -u +%Y%m%d -d "yesterday"`
+date_auto=`date -u +%Y%m%d`
 time_auto=`date -u +%H`
 
 levels="200_mb:400_mb:500_mb"

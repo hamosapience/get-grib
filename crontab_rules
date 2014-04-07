@@ -1,0 +1,3 @@
+0 */3 * * * /root/get.sh
+0 16 * * * /root/write_to_postgres.sh
+0 18 * * * /root/clean.sh

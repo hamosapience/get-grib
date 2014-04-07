@@ -1,0 +1,10 @@
+CREATE TABLE meteo."grib-forecast"
+(
+  fdate timestamp without time zone,
+  lon real,
+  lat real,
+  level real,
+  tmp real,
+  ugrd real,
+  vgrd real
+);

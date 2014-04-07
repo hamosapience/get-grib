@@ -1,6 +1,11 @@
 #!/bin/bash
+echo 'WRITE '`date`
 table_name='meteo."grib-forecast"'
 columns="(fdate,lon,lat,level,tmp,ugrd,vgrd)"
+user="meteo"
+logfile="./"`date +%d%m%y`".write.log"
+
+touch "$logfile"
 for f in *.csv; do
     [[ -e $f ]] || continue
     val=""
@@ -9,6 +14,6 @@ for f in *.csv; do
    	done < "$f"
    	val=${val:1}
    	query="INSERT INTO $table_name $columns VALUES $val;"
-   	sudo -u postgres psql -U postgres -c "$query"
+   	psql -U $user -c "$query" &>> $logfile
 done
 
